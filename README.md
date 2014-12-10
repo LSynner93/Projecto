@@ -1,4 +1,5 @@
 Projecto
 ========
 
-aqui esta el projecto
+Este proyecto es de Ricardo Huarte y mio
+
