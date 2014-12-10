@@ -18,19 +18,20 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 
-public class DAOUsuarioImpl {
+public class DAOUsu {
     
     
     public String obtenerTodos() throws Exception{
-   SessionFactory factory= HIbernateUtilidades.getSessionFactory();
+        
+   SessionFactory factory= HIbernate.getSessionFactory();
    Session sesion=    factory.openSession();
   Transaction tranza= sesion.beginTransaction();
  
-Criteria cri=sesion.createCriteria(Usuario.class);
+Criteria cri=sesion.createCriteria(Usu.class);
 
 
-ArrayList<Usuario> usuarios= (ArrayList<Usuario>)cri.list();
-Map<String, ArrayList<Usuario>> singletonMap =Collections.singletonMap("usuario", usuarios);
+ArrayList<Usu> usuarios= (ArrayList<Usu>)cri.list();
+Map<String, ArrayList<Usu>> singletonMap =Collections.singletonMap("usuario", usuarios);
 
 
 ObjectMapper mapper=new ObjectMapper();
@@ -45,14 +46,14 @@ ObjectMapper mapper=new ObjectMapper();
     }
     
     public String obtenerUsuarioPorId(Integer id) throws Exception{
-          SessionFactory factory= HIbernateUtilidades.getSessionFactory();
+          SessionFactory factory= HIbernate.getSessionFactory();
    Session sesion=    factory.openSession();
   Transaction tranza= sesion.beginTransaction();
  
-Criteria cri=sesion.createCriteria(Usuario.class).add(Restrictions.idEq(id));
+Criteria cri=sesion.createCriteria(Usu.class).add(Restrictions.idEq(id));
 
 
-Usuario u=(Usuario)cri.uniqueResult();
+Usu u=(Usu)cri.uniqueResult();
 
 
 ObjectMapper mapper=new ObjectMapper();
@@ -63,12 +64,12 @@ return mapper.writeValueAsString(u);
     
     
        public String obtenerPorId(Integer id) throws Exception{
-       SessionFactory factory= HIbernateUtilidades.getSessionFactory();
+       SessionFactory factory= HIbernate.getSessionFactory();
    Session sesion=    factory.openSession();
   Transaction tranza= sesion.beginTransaction();
  
-Criteria cri=sesion.createCriteria(Usuario.class).add(Restrictions.idEq(id));
-Usuario usuario= (Usuario)cri.uniqueResult();
+Criteria cri=sesion.createCriteria(Usu.class).add(Restrictions.idEq(id));
+Usu usuario= (Usu)cri.uniqueResult();
 
 ObjectMapper mapper=new ObjectMapper();
 
@@ -83,22 +84,22 @@ ObjectMapper mapper=new ObjectMapper();
        
        
   public String obtenerPorNOmbre(String nombre) throws Exception{
-       SessionFactory factory= HIbernateUtilidades.getSessionFactory();
+       SessionFactory factory= HIbernate.getSessionFactory();
    Session sesion=    factory.openSession();
   Transaction tranza= sesion.beginTransaction();
  
-Criteria cri=sesion.createCriteria(Usuario.class).add(Restrictions.like("nombre", nombre+"%"));
-Criteria cri2=sesion.createCriteria(Usuario.class).add(Restrictions.eq("nombre", nombre));
-Criteria cri3=sesion.createCriteria(Usuario.class).add(Restrictions.between("edad", 18,40)).addOrder(Order.asc("nombre"));
-Criteria cri4=sesion.createCriteria(Usuario.class).add(Restrictions.lt("sueldo", new Integer(4000)));
-Criteria cri5=sesion.createCriteria(Usuario.class).add(Restrictions.gt("sueldo", new Integer(4000)));
+Criteria cri=sesion.createCriteria(Usu.class).add(Restrictions.like("nombre", nombre+"%"));
+Criteria cri2=sesion.createCriteria(Usu.class).add(Restrictions.eq("nombre", nombre));
+Criteria cri3=sesion.createCriteria(Usu.class).add(Restrictions.between("edad", 18,40)).addOrder(Order.asc("nombre"));
+Criteria cri4=sesion.createCriteria(Usu.class).add(Restrictions.lt("sueldo", new Integer(4000)));
+Criteria cri5=sesion.createCriteria(Usu.class).add(Restrictions.gt("sueldo", new Integer(4000)));
 
 
-ArrayList<Usuario> usuarios=(ArrayList<Usuario>) cri.list();
+ArrayList<Usu> usuarios=(ArrayList<Usu>) cri.list();
 
 ObjectMapper mapper=new ObjectMapper();
 
-Map<String ,ArrayList<Usuario>> singletonMap=Collections.singletonMap("usuarios", usuarios);
+Map<String ,ArrayList<Usu>> singletonMap=Collections.singletonMap("usuarios", usuarios);
 
 
 

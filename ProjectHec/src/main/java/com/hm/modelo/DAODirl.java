@@ -15,21 +15,22 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 
-public class DAODireccionImpl {
+public class DAODirl {
     
     
     public String obtenerTodos()throws Exception{
         
     
-     SessionFactory factory= HIbernateUtilidades.getSessionFactory();
+     SessionFactory factory= HIbernate.getSessionFactory();
    Session sesion=    factory.openSession();
   Transaction tranza= sesion.beginTransaction();
+  
  
-Criteria cri=sesion.createCriteria(Direccion.class);
-ArrayList<Direccion> usuarios= (ArrayList<Direccion>)cri.list();
+Criteria cri=sesion.createCriteria(Direc.class);
+ArrayList<Direc> usuarios= (ArrayList<Direc>)cri.list();
 
 ObjectMapper mapper=new ObjectMapper();
-Map<String, ArrayList<Direccion>> singletonMap= Collections.singletonMap("direccion", usuarios);
+Map<String, ArrayList<Direc>> singletonMap= Collections.singletonMap("direccion", usuarios);
 
 
   

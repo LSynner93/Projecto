@@ -9,7 +9,7 @@ import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 
 
-public class HIbernateUtilidades {
+public class HIbernate {
 
     private static final SessionFactory sessionFactory;
     

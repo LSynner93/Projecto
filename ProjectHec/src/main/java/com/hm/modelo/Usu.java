@@ -27,7 +27,7 @@ import org.codehaus.jackson.annotate.JsonManagedReference;
 @Entity
 @Table(name = "USUARIO")
 
-public class Usuario implements Serializable {
+public class Usu implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,10 +43,10 @@ public class Usuario implements Serializable {
     private Float sueldo;
  
 
-    public Usuario() {
+    public Usu() {
     }
 
-    public Usuario(Integer idUsuario) {
+    public Usu(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -94,10 +94,10 @@ public class Usuario implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Usuario)) {
+        if (!(object instanceof Usu)) {
             return false;
         }
-        Usuario other = (Usuario) object;
+        Usu other = (Usu) object;
         if ((this.idUsuario == null && other.idUsuario != null) || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario))) {
             return false;
         }
@@ -106,7 +106,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.jc.elementos.model.Usuario[ idUsuario=" + idUsuario + " ]";
+        return "com.hm.modelo.Usu[ idUsu=" + idUsuario + " ]";
     }
     
 }

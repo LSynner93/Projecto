@@ -5,9 +5,9 @@
  */
 package com.hm.controlador;
 
-import com.hm.elementos.controlador.*;
+import com.hm.controlador.*;
 
-import com.hm.elementos.modelo.DAOUsuarioImpl;
+import com.hm.modelo.DAOUsu;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/")
-public class ControladorUsuario {
+public class SrUsu {
     
     @RequestMapping(value="/usuario", method=RequestMethod.GET, headers={"Accept=Application/json"})
     public @ResponseBody String hola2()throws Exception{
-    DAOUsuarioImpl d=new DAOUsuarioImpl();
+    DAOUsu d=new DAOUsu();
     
    String hola= d.obtenerTodos();
       
@@ -29,7 +29,7 @@ public class ControladorUsuario {
     
      @RequestMapping(value="/usuario/{id}", method=RequestMethod.GET, headers={"Accept=Application/json"})
     public @ResponseBody String hola3(@PathVariable Integer id)throws Exception{
-    DAOUsuarioImpl d=new DAOUsuarioImpl();
+    DAOUsu d=new DAOUsu();
     
    
       
@@ -38,7 +38,7 @@ public class ControladorUsuario {
     
     @RequestMapping(value="/usuario/nombre/{nombre}", method=RequestMethod.GET, headers={"Accept=Application/json"})
     public @ResponseBody String buscarPorNOmbre(@PathVariable String nombre)throws Exception{
-    DAOUsuarioImpl d=new DAOUsuarioImpl();
+    DAOUsu d=new DAOUsu();
     
    
      

@@ -5,7 +5,7 @@
  */
 package com.hm.controlador;
 
-import com.hm.modelo.DAODireccionImpl;
+import com.hm.modelo.DAODirl;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/")
-public class ControladorDireccion {
+public class ContDir {
     
    @RequestMapping(value="/direccion", method=RequestMethod.GET, headers={"Accept=Applicaction/json"})
     public @ResponseBody String todos()throws Exception{
-      DAODireccionImpl di=new DAODireccionImpl();
+      DAODirl di=new DAODirl();
      
 return di.obtenerTodos();
     }

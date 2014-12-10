@@ -1,14 +1,15 @@
 
 package com.hm.controlador;
 
-import com.hm.modelo.DAOUsuarioImpl;
-import com.hm.modelo.Usuario;
+import com.hm.modelo.DAOUsu;
+import com.hm.modelo.Usu;
 import java.util.ArrayList;
 
 
-public class GenerarUsuarios {
+
+public class CrearUsus {
     public static String obtenerUsuario()throws Exception{
-        DAOUsuarioImpl du=new DAOUsuarioImpl();
+        DAOUsu du=new DAOUsu();
         
    
         return du.obtenerTodos() ;

@@ -27,7 +27,7 @@ import org.codehaus.jackson.annotate.JsonManagedReference;
 @Entity
 @Table(name = "DIRECCION")
 
-public class Direccion implements Serializable {
+public class Direc implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,9 +44,9 @@ public class Direccion implements Serializable {
     private String estado;
     @MapsId @OneToOne
    @JoinColumn(name="id_usuario")
-   private Usuario u;
+   private Usu u;
 
-    public Direccion(String calle, Integer cp, String colonia, String estado, Usuario u) {
+    public Direc(String calle, Integer cp, String colonia, String estado, Usu u) {
         this.calle = calle;
         this.cp = cp;
         this.colonia = colonia;
@@ -54,10 +54,10 @@ public class Direccion implements Serializable {
         this.u = u;
     }
 
-    public Direccion() {
+    public Direc() {
     }
 
-    public Direccion(Integer idDireccion) {
+    public Direc(Integer idDireccion) {
         this.idDireccion = idDireccion;
     }
 
@@ -113,10 +113,10 @@ public class Direccion implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Direccion)) {
+        if (!(object instanceof Direc)) {
             return false;
         }
-        Direccion other = (Direccion) object;
+        Direc other = (Direc) object;
         if ((this.idDireccion == null && other.idDireccion != null) || (this.idDireccion != null && !this.idDireccion.equals(other.idDireccion))) {
             return false;
         }
@@ -128,11 +128,11 @@ public class Direccion implements Serializable {
         return "co";
     }
 
-    public Usuario getU() {
+    public Usu getU() {
         return u;
     }
 
-    public void setU(Usuario u) {
+    public void setU(Usu u) {
         this.u = u;
     }
     

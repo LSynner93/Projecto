@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "trabajador")
 
-public class Trabajador implements Serializable {
+public class Chaval implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,21 +34,21 @@ public class Trabajador implements Serializable {
     @Column(name = "materno")
     private String materno;
 
-    public Trabajador(String nombre, String paterno, String materno) {
+    public Chaval(String nombre, String paterno, String materno) {
         this.nombre = nombre;
         this.paterno = paterno;
         this.materno = materno;
     }
 
-    public Trabajador() {
+    public Chaval() {
     }
 
-    public Trabajador(Integer idTrabajador, String materno) {
+    public Chaval(Integer idTrabajador, String materno) {
         this.idTrabajador = idTrabajador;
         this.materno = materno;
     }
 
-    public Trabajador(Integer idTrabajador) {
+    public Chaval(Integer idTrabajador) {
         this.idTrabajador = idTrabajador;
     }
 
@@ -94,19 +94,21 @@ public class Trabajador implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Trabajador)) {
+        if (!(object instanceof Chaval)) {
             return false;
         }
-        Trabajador other = (Trabajador) object;
+        Chaval other = (Chaval) object;
         if ((this.idTrabajador == null && other.idTrabajador != null) || (this.idTrabajador != null && !this.idTrabajador.equals(other.idTrabajador))) {
             return false;
         }
         return true;
     }
+    
+    
 
     @Override
     public String toString() {
-        return "com.jc.elementos.model.Trabajador[ idTrabajador=" + idTrabajador + " ]";
+        return "com.hm.modelo.CHAVAL[ IDCHAVAL=" + idTrabajador + " ]";
     }
     
 }

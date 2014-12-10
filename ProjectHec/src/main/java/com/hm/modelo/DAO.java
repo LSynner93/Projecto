@@ -14,7 +14,7 @@ public class DAO {
 private static final Logger log = Logger.getAnonymousLogger();
 private static final ThreadLocal session = new ThreadLocal();
 
-private static final SessionFactory sessionFactory = HIbernateUtilidades.getSessionFactory();
+private static final SessionFactory sessionFactory = HIbernate.getSessionFactory();
         
    public DAO() {  }
                     
